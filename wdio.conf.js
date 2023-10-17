@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/android-f*.js'
+        './test/specs/**/android-e*.js'
     ],
     // Patterns to exclude.
     exclude: [
