@@ -19,14 +19,21 @@ describe("Android Native Feature Tests",  () => {
         await $('~Activity').click()
 
         // scroll to the end (not stable if element gets moved)
-        // await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1,5)')
+        // await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1,5)') >> then >> await $('~Secure Surfaces').click()
 
         // scrollTextIntoView - slower, more stable
         await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Secure Surfaces")').click()
 
-        // await $('~Secure Surfaces').click()
-
         // assertion
         await expect($('~Secure Dialog')).toExist()
+    })
+
+    it("Horizontal scrolling", async () => {
+        await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.view.Gallery1")
+
+        // scroll by setAsHorizontalList the scrollForward or scrollBackward
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()')
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollBackward()')
+        await driver.pause(3000)
     })
 })
