@@ -20,7 +20,7 @@ describe('Android Elements Tests', () => {
         await expect(apiDemos).toHaveText('API Demos')
     })
 
-    it("Find element by XPath", async () => {
+    it("Find elements by XPath", async () => {
         // xpath - (//tagname[@attribute=value])
         await $('//android.widget.TextView[@content-desc="Alert Dialogs"]').click()
 
@@ -29,9 +29,11 @@ describe('Android Elements Tests', () => {
 
         // find element by text
         await $('//android.widget.TextView[@text="Command two"]').click()
+    })
 
-        // find by class and assert by text
-        const textAssertion = await $('//android.widget.TextView')
+    it('Find elements by UIAutomator', async () => {
+        // find by text contains
+        const textAssertion = await $('android=new UiSelector().textContains("Command two")')
         await expect(textAssertion).toHaveText('You selected: 1 , Command two')
     })
 })
