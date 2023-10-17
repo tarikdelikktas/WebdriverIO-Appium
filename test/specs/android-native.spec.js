@@ -36,4 +36,28 @@ describe("Android Native Feature Tests",  () => {
         await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollBackward()')
         await driver.pause(3000)
     })
+
+
+    it.only("Access the Date Widget and change the current date", async () => {
+        await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.view.DateWidgets1")
+
+        // assert the current date
+        const date = await ($('//*[@resource-id="io.appium.android.apis:id/dateDisplay"]'))
+        const curretDate = date.getText()
+
+        // click on the "change the date"
+        await $('~change the date').click()
+
+        // scroll horizontally to the right
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()')
+
+        // pick the 10th date from the month
+        await $('//*[@text="10"]').click()
+
+        // click on OK button
+        await $('//*[@resource-id="android:id/button1"]').click()
+
+        // assert the date is updated
+        await expect(await date.getText()).not.toEqual(curretDate)
+    })
 })
