@@ -1,27 +1,27 @@
+const AddNoteScreen = require('../../screenobjects/android/add-note.screen')
+
 describe("Add notes", () => {
     it("Skip Tutorial", async () => {
-        await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]').click()
-        await expect($('//*[@text="Add note"]')).toBeDisplayed()
+        await AddNoteScreen.skipBtn.click()
+        await expect(AddNoteScreen.addNoteText).toBeDisplayed()
     })
 
     it("add a note, save changes & verify notes", async () => {
-        await $('//*[@text="Add note"]').click()
-        await $('//*[@text="Text"]').click()
-        await expect($('//*[@text="Editing"]')).toBeDisplayed()
+        await AddNoteScreen.addNoteTxt.click()
+        await AddNoteScreen.textOption.click()
+        await expect(AddNoteScreen.textEditing).toBeDisplayed()
 
         // add note text
-        await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_title"]').addValue("Fav Anime List")
+        await AddNoteScreen.noteHeading.addValue("Fav Anime List")
 
         // add note body
-        await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_note"]').addValue("Naruto\nOnePiece\nAOT")
+        await AddNoteScreen.noteBody.addValue("Naruto\nOnePiece\nAOT")
 
         // save the changes
-        await driver.back()
-        await driver.back()
+        await AddNoteScreen.saveNote()
 
         // assertions
-        await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_btn"]')).toBeDisplayed()
-
-        await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/view_note"]')).toHaveText("Naruto\nOnePiece\nAOT")
+        await expect(AddNoteScreen.editBtn).toBeDisplayed()
+        await expect(AddNoteScreen.viewNote).toHaveText("Naruto\nOnePiece\nAOT")
     })
 })
