@@ -15,7 +15,7 @@ describe('iOS Native Features', () => {
         await expect($('~OK')).not.toExist()
     })
 
-    it.only('Working with Scrollable elements', async () => {
+    it('Working with Scrollable elements', async () => {
         // easiest
         // await driver.execute('mobile: scroll', {direction: "down"})
         // await driver.execute('mobile: scroll', {direction: "up"})
