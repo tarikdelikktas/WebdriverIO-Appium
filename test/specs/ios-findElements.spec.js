@@ -43,7 +43,7 @@ describe("iOS Find Element", () => {
         await expect(await driver.getAlertText()).toContain("A Short Title Is Best")
     })
 
-    it.only("Add and Clear text in search bar", async () => {
+    it("Add and Clear text in search bar", async () => {
         // search click
         await $('~Search').click()
 
