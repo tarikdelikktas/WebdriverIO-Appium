@@ -38,7 +38,7 @@ describe("Android Native Feature Tests",  () => {
     })
 
 
-    it.only("Access the Date Widget and change the current date", async () => {
+    it("Access the Date Widget and change the current date", async () => {
         await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.view.DateWidgets1")
 
         // assert the current date

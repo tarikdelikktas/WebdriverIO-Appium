@@ -3,7 +3,7 @@ const path = require('path');
 exports.config = {
     port: 4723,
     specs: [
-        './test/specs/**/ios*.js'
+        './test/specs/ios/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -24,7 +24,7 @@ exports.config = {
             "appium:platformVersion": "16.4",
             "appium:deviceName": "iPhone 12",
             "appium:automationName": "XCUITest",
-            "appium:app": path.join(process.cwd(), "./app/ios/UIKitCatalog.app")
+            "appium:app": path.join(process.cwd(), "./app/ios/MVCTodo.app"),
         }
     ],
     logLevel: 'info',
