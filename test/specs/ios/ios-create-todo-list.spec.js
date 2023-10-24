@@ -1,10 +1,12 @@
+const ListScreen = require('../../screenobjects/ios/list.screen')
+
 describe('Todo List', () => {
     it('Create a Todo List', async () => {
-        await $('//*[@name="Create list"]').click()
-        await $('//*[@value="List Name"]').addValue("Things todo today")
-        await $('~Create').click()
+        await ListScreen.createListBtn.click()
+        await ListScreen.listNameInput.addValue("Things todo today")
+        await ListScreen.createBtn.click()
 
         // assertion
-        await isExportDeclaration(await $("~Things todo today")).toBeExisting()
+        await expect(await ListScreen.listNameField("Things todo today")).toBeExisting()
     })
 })
