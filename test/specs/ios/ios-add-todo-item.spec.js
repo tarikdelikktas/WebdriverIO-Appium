@@ -1,43 +1,42 @@
+const ListScreen = require('../../screenobjects/ios/list.screen')
+const ItemScreen = require('../../screenobjects/ios/item.screen')
+
 describe('Todo Item', () => {
     it('Create a Todo List', async () => {
-        await $('~Add').click()
-        await $('//*[@value="List Name"]').addValue("Patient checklist")
-        await $('~Create').click()
-
-        // assertion
-        await expect(await $("~Patient checklist")).toBeExisting()
+        await ListScreen.createListBtn.click()
+        await ListScreen.listNameInput.addValue("Patient checklist")
+        await ListScreen.createBtn.click()
+        await expect(await ListScreen.listNameField("Patient checklist")).toBeExisting()
     })
 
     it('Add item into to the list', async () => {
         // tap on created todo list item
-        await $("~Patient checklist").click()
+        ListScreen.listNameField("Patient checklist").click()
 
         // tap on create item button
-        await $('//*[@name="Create item"]').click()
+        ItemScreen.createItem.click()
 
         // add value as title for todo list
-        await $('//*[@value="Title"]').addValue('Eye Care Appointment')
+        ItemScreen.title.addValue('Eye Care Appointment')
 
         // tap on due date input
-        await $('//*[@value="Due"]').click()
+        ItemScreen.dueDate.click()
 
         // tap on date picker
-        await $("~Date Picker").click()
+        ItemScreen.datePicker.click()
 
         // select date from time picker
-        await $("~Friday, October 27").click()
+        ItemScreen.getByAccessibility("Friday, October 27").click()
 
         // tap somewhere on the screen
-        await $('//XCUIElementTypeWindow[@index=2]').click()
+        ItemScreen.secondWindow.click()
 
         // tap on create button
-        await $('~Create').click()
+        ItemScreen.createBtn.click()
 
-        // assertion for created item title
-        await expect(await $('~eye care')).toBeExisting()
-
-        // assertion for created item due date
-        await expect(await $('~Due October 27, 2023')).toBeExisting()
+        // assertion for created item title and due date
+        await expect(ItemScreen.getByAccessibility('eye care')).toBeExisting()
+        await expect(ItemScreen.getByAccessibility('Due October 27, 2023')).toBeExisting()
 
     })
 })
