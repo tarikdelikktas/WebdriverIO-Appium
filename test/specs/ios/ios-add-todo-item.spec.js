@@ -37,6 +37,5 @@ describe('Todo Item', () => {
         // assertion for created item title and due date
         await expect(ItemScreen.getByAccessibility('eye care')).toBeExisting()
         await expect(ItemScreen.getByAccessibility('Due October 27, 2023')).toBeExisting()
-
     })
 })
