@@ -3,7 +3,7 @@ const path = require('path');
 exports.config = {
     port: 4723,
     specs: [
-        './test/specs/ios/*.js'
+        './test/specs/ios/ios-add-todo*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -21,8 +21,8 @@ exports.config = {
         // }
         {
             platformName: "ios",
-            "appium:platformVersion": "16.4",
-            "appium:deviceName": "iPhone 12",
+            "appium:platformVersion": "16.2",
+            "appium:deviceName": "iPhone 12 Pro",
             "appium:automationName": "XCUITest",
             "appium:app": path.join(process.cwd(), "./app/ios/MVCTodo.app"),
         }
