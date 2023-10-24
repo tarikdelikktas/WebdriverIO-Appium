@@ -1,32 +1,10 @@
-const path = require('path');
-
 exports.config = {
-    port: 4723,
-    specs: [
-        './test/specs/ios/ios-add-todo*.js'
-    ],
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
     maxInstances: 10,
-    capabilities: [
-        // {
-        //     platformName: "Android",
-        //     "appium:platformVersion": "12L",
-        //     "appium:deviceName": "Pixel 4",
-        //     "appium:automationName": "UIAutomator2",
-        //     "appium:app": path.join(process.cwd(), "./app/android/ColorNote+Notepad.apk"),
-        //     "appium:autoGrantPermissions": true
-        // }
-        {
-            platformName: "ios",
-            "appium:platformVersion": "16.4",
-            "appium:deviceName": "iPhone 12",
-            "appium:automationName": "XCUITest",
-            "appium:app": path.join(process.cwd(), "./app/ios/MVCTodo.app"),
-        }
-    ],
     logLevel: 'info',
     bail: 0,
     baseUrl: 'http://localhost',
