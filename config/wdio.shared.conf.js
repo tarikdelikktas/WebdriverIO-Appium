@@ -2,7 +2,7 @@ exports.config = {
 
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+    // 'path/to/excluded/files'
     ],
     maxInstances: 10,
     logLevel: 'info',
@@ -18,7 +18,6 @@ exports.config = {
     //
     // Default request retries count
     connectionRetryCount: 3,
-    services: ['appium'],
     framework: 'mocha',
     reporters: ['spec'],
     mochaOpts: {

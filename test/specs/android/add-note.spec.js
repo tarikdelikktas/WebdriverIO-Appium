@@ -3,7 +3,7 @@ const AddNoteScreen = require('../../screenobjects/android/add-note.screen')
 describe("Add notes", () => {
     it("Skip Tutorial", async () => {
         await AddNoteScreen.skipBtn.click()
-        await expect(AddNoteScreen.addNoteText).toBeDisplayed()
+        await expect(AddNoteScreen.addNoteTxt).toBeDisplayed()
     })
 
     it("add a note, save changes & verify notes", async () => {
