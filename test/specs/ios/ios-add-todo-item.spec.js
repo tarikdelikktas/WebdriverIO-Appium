@@ -2,11 +2,12 @@ import ListScreen from '../../screenobjects/ios/list.screen'
 import ItemScreen from '../../screenobjects/ios/item.screen'
 
 describe('Todo Item', () => {
-    it('Create a Todo List', async () => {
+    before(async () => {
         await ListScreen.createListBtn.click()
         await ListScreen.listNameInput.addValue("Patient checklist")
         await ListScreen.createBtn.click()
         await expect(await ListScreen.listNameField("Patient checklist")).toBeExisting()
+        await ListScreen.createListBtn.click()
     })
 
     it('Add item into to the list', async () => {
