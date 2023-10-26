@@ -13,15 +13,6 @@ describe('Web Browser Access', () => {
         // click on the fb link
         await $('//*[@text="Like us on Facebook"]').click()
 
-        // click on Accept & continue google chrome text
-        // await $('//*[@text="Accept & continue"]').click()
-
-        // click on No thanks for google chrome turn on sync
-        // await $('//*[@resource-id="com.android.chrome:id/negative_button"]')
-
-        await driver.pause(2000)
-        // get current context
-        // console.log(await driver.getContext())
 
         // get all the context
         await driver.getContexts()
@@ -32,5 +23,15 @@ describe('Web Browser Access', () => {
         // assert the cover-user-name-root is displayed
         const coverUsername = await $('#cover-user-name-root')
         await expect(coverUsername).not.toBeDisplayed()
+
+        // switch back to app
+        await driver.switchContext('NATIVE_APP')
+        await driver.back()
+        
+        // comtinue with the native app
+        await $('//*[@text="Notes"]').click()
+        const addNoteTxt = await $('//*[@text="Add note"]')
+        await expect(addNoteTxt).toBeDisplayed()
+
     })
 })
