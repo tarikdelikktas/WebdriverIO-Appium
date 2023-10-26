@@ -1,6 +1,6 @@
 class ListScreen {
     get createListBtn() {
-        return $('//*[@name="Create list"]').click()
+        return $('//*[@name="Create list"]')
     }
 
     get listNameInput() {
