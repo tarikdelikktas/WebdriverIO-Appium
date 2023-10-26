@@ -17,4 +17,6 @@ config.capabilities = [
     }
 ]
 
+config.services = ['appium']
+
 exports.config = config;
