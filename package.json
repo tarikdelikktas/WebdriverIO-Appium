@@ -1,6 +1,10 @@
 {
-  "name": "my-new-project",
+  "name": "webdriverio-appium",
   "version": "0.1.0",
+  "description": "Appium tests using WebdriverIO",
+  "main": "index.js",
+  "author": "Tarik Deliktas",
+  "license": "ISC",
   "private": true,
   "devDependencies": {
     "@babel/cli": "^7.23.0",
@@ -24,8 +28,11 @@
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"
   },
+  "keywords": [
+    "webdriverio",
+    "appium"
+  ],
   "dependencies": {
-    "appium-chromedriver": "^5.6.20",
     "dotenv": "^16.3.1"
   }
 }
