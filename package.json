@@ -11,6 +11,7 @@
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/register": "^7.22.15",
+    "@wdio/allure-reporter": "^8.20.0",
     "@wdio/appium-service": "^8.18.2",
     "@wdio/browserstack-service": "^8.20.5",
     "@wdio/cli": "^8.18.2",
