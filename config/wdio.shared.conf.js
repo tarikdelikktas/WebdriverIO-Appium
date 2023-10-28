@@ -19,7 +19,11 @@ exports.config = {
     // Default request retries count
     connectionRetryCount: 3,
     framework: 'mocha',
-    reporters: ['spec'],
+    reporters: ['spec', ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
