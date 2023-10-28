@@ -20,7 +20,7 @@ config.capabilities = [
 
 config.services = [['appium', {
     args: {
-        address: 'locoalhost',
+        address: 'localhost',
         port: 4724,
         relaxedSecurity: true
     },
