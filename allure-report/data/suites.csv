@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Oct 27 19:03:35 PDT 2023","Fri Oct 27 19:03:43 PDT 2023","8081","","Add notes","","","","add a note, save changes & verify notes",""
-"passed","Fri Oct 27 19:03:33 PDT 2023","Fri Oct 27 19:03:35 PDT 2023","2104","","Add notes","","","","Skip Tutorial",""
+"passed","Fri Oct 27 19:21:02 PDT 2023","Fri Oct 27 19:21:04 PDT 2023","1881","","Add notes","","","","Skip Tutorial",""
+"passed","Fri Oct 27 19:21:04 PDT 2023","Fri Oct 27 19:21:12 PDT 2023","7778","","Add notes","","","","add a note, save changes & verify notes",""
